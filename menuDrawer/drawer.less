@@ -15,6 +15,7 @@ body {
   font-family: "Cera Pro";
 }
 .drawer-main-container {
+  max-width: 292px;
   box-sizing: border-box;
   font-family: "Cera Pro";
 }
@@ -31,7 +32,8 @@ body {
 }
 
 .drawer-change-site-button {
-  padding: 10px;
+  min-height: 32px;
+
   border: 1px solid rgba(255, 255, 255, 0.6);
   border-radius: 4px;
 
@@ -51,6 +53,10 @@ body {
   }
 }
 /* LOGIN  */
+.drawer-login-text {
+  font-size: 12px;
+  font-weight:500;
+}
 .drawer-settings-button {
   background-image: url(src/drawer-settings.svg);
 
@@ -69,7 +75,7 @@ body {
 
 .drawer-button {
   margin-top: 16px;
-  padding: 14px;
+  min-height:40px;
 
   border: 1px solid #989cb4;
 
@@ -112,14 +118,18 @@ body {
   &-container {
     font-size: 14px;
     font-weight: 400;
-    margin: 8px;
-    padding: 8px;
+    color:rgba(28, 37, 70, 0.4);
+
+    margin: 8px 0 8px 0;
+    padding:@baseOffset 12px;
+    min-height: 32px;
 
     background-color: rgba(152, 156, 180, 0.2);
     border-radius: 16px;
 
     display: flex;
     justify-content: space-between;
+    align-items: center;
     flex-grow: 1;
   }
   &-icon {
@@ -139,6 +149,8 @@ body {
 
   min-height: 40px;
   margin-right: @baseOffset;
+
+  border-bottom: 2px solid transparent;
   &--active {
     border-bottom: 2px solid #e21d02;
   }
@@ -153,6 +165,14 @@ body {
   border-top: 1px solid rgba(37, 54, 112, 0.05);
 
   padding: 0 @baseOffset*2;
+
+  font-size: 14px;
+  font-weight: 500;
+  color:@primaryColor;
+
+  &-link {
+    margin-left:@baseOffset;
+  }
 }
 
 // Линки в дровере
