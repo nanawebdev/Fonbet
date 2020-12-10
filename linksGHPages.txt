@@ -1,5 +1,0 @@
-Дровер для незалогиненного юзера:
-https://nanawebdev.github.io/Fonbet/menuDrawer
-
-Дровер для залогиненного юзера:
-https://nanawebdev.github.io/Fonbet/menuDrawer/drawerLoginUser
