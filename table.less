@@ -1,0 +1,83 @@
+// ТАБЛИЦА
+.top__table {
+}
+.sticky-header {
+  border-top: 1px solid rgba(152, 156, 180, 0.2);
+  display: flex;
+  overflow: scroll;
+  background-color: #f7f7f7;
+  min-height: 44px;
+  align-items: center;
+  padding: 0 @baseOffset*2 0 @baseOffset*2;
+}
+.sticky-title {
+  margin-right: @baseOffset;
+}
+.result-button {
+  background-color: @primaryColor;
+  color: #ffff;
+  border-radius: 2px;
+  min-height: 20px;
+  min-width: 40px;
+  margin-right: @baseOffset;
+  white-space: nowrap;
+}
+
+.champ__header {
+  font-size: 12px;
+  font-weight: 500;
+  min-height: 30px;
+
+  display: flex;
+
+  border-bottom: 2px solid #619a38;
+}
+.champ_cell_title {
+  display: flex;
+  padding-left: @baseOffset*2;
+  overflow: hidden;
+  white-space: nowrap;
+
+  flex-grow: 1;
+}
+.champ_cell {
+  display: flex;
+  justify-content: center;
+  
+  align-items: center;
+
+  min-width: 80px;
+}
+
+.tr {
+  border-bottom: 1px solid rgba(152, 156, 180, 0.2);
+
+  font-size: 14px;
+
+  display: flex;
+}
+.td {
+  align-items: center;
+
+  min-width: 80px;
+}
+.td-players {
+  padding:12px 0 11px @baseOffset*2;
+  font-weight: 500;
+ 
+  padding-left: @baseOffset*2;
+
+  flex-grow: 1;
+}
+.td-cell {
+  display: flex;
+  justify-content: center;
+  font-weight: 700;
+  
+}
+.td:nth-child(2n){
+  background-color:rgba(37, 54, 112, 0.05); 
+}
+.player {
+  margin-bottom: 4px;
+}

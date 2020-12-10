@@ -1,0 +1,378 @@
+@import "helpers.less";
+@baseOffset: 8px;
+
+@primaryColor: #253670;
+@primaryDarkColor: #1c2546;
+
+button {
+  outline: none;
+  border-style: none;
+  font-family: "Cera Pro";
+  color: @primaryColor;
+  background-color: transparent;
+}
+
+body {
+  font-family: "Cera Pro";
+
+  position: relative;
+}
+
+
+// Отображение дровера поверх других страниц
+
+// правило для overlay-bg прописано в файле top.less 
+._withDrawer .overlay-bg{
+  opacity: .5;
+  pointer-events: auto;
+}
+
+.drawer {
+  width: 296px;
+  background-color: white;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  transform: translateX(-100%);
+  transition: transform .5s;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+._withDrawer .drawer {
+  transform: translateX(0);
+}
+
+/* CHANGE SITE BUTTONS  */
+.drawer-change-site-container {
+  background-color: #0056c8;
+  padding: 12px @baseOffset*2;
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer-change-site-button {
+  min-height: 32px;
+
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 4px;
+
+  font-weight: 700;
+  font-size: 12px;
+
+  background-color: #ffff;
+  color: #0056c8;
+
+  &--outline {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffff;
+  }
+
+  & + & {
+    margin-top: 8px;
+  }
+}
+/* LOGIN  */
+.drawer-login-text {
+  font-size: 12px;
+  font-weight:500;
+}
+.drawer-settings-button {
+  background-image: url(/menuDrawer/src/drawer-settings.svg);
+
+  width: 24px;
+  height: 24px;
+
+  flex-shrink: 0;
+  padding: 0;
+
+  margin-left: @baseOffset;
+}
+
+.drawer-signIn__up-container {
+  padding: @baseOffset*2;
+}
+
+.drawer-button {
+  margin-top: 16px;
+  min-height:40px;
+
+  border: 1px solid #989cb4;
+
+  border-radius: 4px;
+
+  min-width: 83px;
+  color: #ffffff;
+  background-color: @primaryColor;
+  font-size: 12px;
+  font-weight: 700;
+  & + & {
+    margin-left: @baseOffset;
+  }
+
+  &--outline {
+    background-color: transparent;
+    color: @primaryDarkColor;
+    flex-grow: 1;
+  }
+}
+
+// Лайв\линия и поиск
+.drawer-buttons-search-container {
+  display: flex;
+  min-height: 48px;
+  position: relative;
+  &::before {
+    height: 1px;
+
+    position: absolute;
+    left: -16px;
+    right: -16px;
+
+    background-color: rgba(37, 54, 112, 0.1);
+    content: "";
+  }
+}
+// Кнопка Поиск
+.drawer-search {
+  &-container {
+    font-size: 14px;
+    font-weight: 400;
+    color:rgba(28, 37, 70, 0.4);
+
+    margin: 8px 0 8px 0;
+    padding:@baseOffset 12px;
+    min-height: 32px;
+
+    background-color: rgba(152, 156, 180, 0.2);
+    border-radius: 16px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+  }
+  &-icon {
+    width: 16px;
+    height: 16px;
+
+    background-image: url(/menuDrawer/src/search.svg);
+  }
+}
+
+// Кнопки смены Линия/Лайв
+.drawer-button-change {
+  background-color: #ffff;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  min-height: 40px;
+  margin-right: @baseOffset;
+
+  border-bottom: 2px solid transparent;
+  &--active {
+    border-bottom: 2px solid #e21d02;
+  }
+}
+
+// Список линков спортивных дисциплин
+.drawer-sport {
+  display: flex;
+  align-items: center;
+
+  min-height: 40px;
+  border-top: 1px solid rgba(37, 54, 112, 0.05);
+
+  padding: 0 @baseOffset*2;
+
+  font-size: 14px;
+  font-weight: 500;
+  color:@primaryColor;
+
+  &-link {
+    margin-left:@baseOffset;
+  }
+}
+
+// Линки в дровере
+.drawer-link-wrapper {
+  display: flex;
+  background-color: #f7f7f7;
+  justify-content: space-between;
+  align-items: center;
+
+  min-height: 40px;
+
+  border-top: 1px solid rgba(37, 54, 112, 0.05);
+  padding: 0 @baseOffset*2;
+}
+
+.drawer-link {
+  color: @primaryDarkColor;
+  font-size: 14px;
+  font-weight: 700;
+
+  &-icon {
+    margin-left: @baseOffset;
+  }
+}
+
+//  Данные залогиненного юзера, в дровере
+.drawer-user {
+  background-color: #f7f7f7;
+  padding-left: @baseOffset * 2;
+  padding-right: @baseOffset * 2;
+  &-data {
+    display: flex;
+    justify-content: space-between;
+    padding: @baseOffset*2 0;
+  }
+  &-id__title {
+    color: rgba(28, 37, 70, 0.4);
+  }
+  &-links {
+    display: flex;
+  }
+  &-icon {
+    margin-left: @baseOffset;
+  }
+  &-icon-notification {
+    background-image: url(menuDrawer/src/notifications.svg);
+    width: 24px;
+    height: 24px;
+  }
+  &-icon-account {
+    background-image: url(menuDrawer/src/account.svg);
+    width: 24px;
+    height: 24px;
+  }
+  // Счет
+  &-score {
+    display: flex;
+    padding: @baseOffset 0;
+  }
+  &-scores {
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 4px;
+    border: 1px solid rgba(152, 156, 180, 0.4);
+    background-color: #fff;
+
+    padding: 4px 8px;
+
+    & + & {
+      margin-left: @baseOffset;
+    }
+    &--title {
+      font-size: 10px;
+      font-weight: 500;
+    }
+    &--value {
+      font-size: 14px;
+      font-weight: 700;
+    }
+  }
+  // Кнопки (счет)
+  &-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-deposit {
+    min-width: 99px;
+    background-color: @primaryColor;
+    color: #ffff;
+    border-radius: 4px;
+    padding: 7px;
+  }
+  &-deposit__title {
+    font-size: 10px;
+    display: flex;
+    justify-content: start;
+  }
+  &-deposit__price {
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    align-items: center;
+  }
+  &-deposit__icon {
+    background-image: url(menuDrawer/src/add.svg);
+    width: 12px;
+    height: 12px;
+    margin-left: 6px;
+  }
+  &-withdraw--outline {
+    font-weight: 700;
+    flex-grow: 1;
+    border: 1px solid #989cb4;
+    box-sizing: border-box;
+    border-radius: 4px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: @baseOffset;
+  }
+}
+
+// Анимация "пульс"
+.pulse {
+  &-chevrone-wrapper {
+    display: flex;
+  }
+  &-wrapper {
+    margin-right: 15px;
+  }
+
+  &--center {
+    width: 12px;
+    height: 12px;
+    background-color: #0056c8;
+    border-radius: 50%;
+    animation-name: pulseCenter;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+  }
+
+  &--full {
+    width: 12px;
+    height: 12px;
+    background-color: #0056c8;
+    border-radius: 50%;
+    animation-name: pulseFull;
+    animation-duration: 3s;
+    animation-timing-function: lin;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes pulseFull {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(0.95);
+    }
+    100% {
+      transform: scale(2);
+      opacity: 0.3;
+    }
+  }
+
+  @keyframes pulseCenter {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(0.95);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+}

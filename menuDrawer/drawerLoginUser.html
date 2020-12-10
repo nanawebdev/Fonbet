@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <link rel="stylesheet" href="reset.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet/less" type="text/css" href="drawer.less">
+    <link rel="stylesheet" href="fonts.css">
+</head>
+
+<body>
+
+    <div class="drawer-main-container">
+        <div class="drawer-change-site-container">
+            <button class="drawer-change-site-button">Перейти на старую версию сайта</button>
+            <button class="drawer-change-site-button drawer-change-site-button--outline">Закрыть</button>
+        </div>
+        
+        <!-- Данные залогиненного юзера, в дровере -->
+        <div class="drawer-user">
+            <div class="drawer-user-data">
+                <div class="drawer-user-name">
+                    <span>Иванов Иван Иванович</span>
+                    <div class="drawer-user-id">
+                        <span class="drawer-user-id__title">Номер счета</span>
+                        <span class="drawer-user-id__value">1234567889</span>
+                    </div>
+                </div>
+
+                <div class="drawer-user-links">
+                    <div class="drawer-user-icon drawer-user-icon-notification"></div>
+                    <div class="drawer-user-icon drawer-user-icon-account"></div>
+                </div>
+            </div>
+
+            <div class="drawer-user-buttons">
+
+                <button class="drawer-user-deposit">
+                    <div class=" drawer-user-deposit__title">Пополнить</div>
+                    <div class="drawer-user-deposit__price">
+                        <span>1 000,00$</span>
+                        <div class="drawer-user-deposit__icon"></div>
+                    </div>
+                </button>
+
+                <button class="drawer-user-withdraw--outline">Получить выигрыш</button>
+            </div>
+            <div class="drawer-user-score">
+                <div class="drawer-user-scores">
+                    <span class="drawer-user-scores--title">В игре</span>
+                    <span class="drawer-user-scores--value">10 000$</span>
+                </div>
+
+                <div class="drawer-user-scores drawer-user-scores-bonus">
+                    <span class="drawer-user-scores--title">Бонусы и промокоды</span>
+                    <span class="drawer-user-scores--value">10$</span>
+                </div>
+            </div>
+        </div>
+        <!-- Данные залогиненного юзера, в дровере (конец) -->
+
+        <div class="drawer-signIn__up-container _hidden">
+
+            <div class="f">
+                <p class="drawer-login-text">Авторизуйтесь или зарегистрируйтесь для получения полного доступа к
+                    приложению</p>
+                <button class="drawer-settings-button"></button>
+            </div>
+            <div class="f">
+                <button class="drawer-button drawer-button--outline">Зарегистрироваться</button>
+                <button class="drawer-button">Войти</button>
+            </div>
+
+        </div>
+    
+
+
+    <div class="drawer-links drawer-links-upper"></div>
+
+    <div class="drawer-wrapper">
+        <div class="drawer-buttons-search-container">
+            <button class="drawer-button-change drawer-button-change--active">Лайв</button>
+            <button class="drawer-button-change">Линия</button>
+            <button class="drawer-search-container">
+                <span>Поиск</span>
+                <div class="drawer-search-icon"></div>
+            </button>
+        </div>
+    </div>
+
+    <div class="drawer-sport-container">
+        <div class="drawer-sport">
+            <div class="drawer-sport-link">Все события</div>
+            <img class="drawer-sport-icon">
+        </div>
+    </div>
+
+    <div class="drawer-links drawer-links-bottom"></div>
+</div>
+
+    <script src="//cdn.jsdelivr.net/npm/less"></script>
+    <script src="drawer.js"></script>
+</body>
+
+</html>
