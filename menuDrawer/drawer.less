@@ -11,18 +11,39 @@ button {
   color: @primaryColor;
   background-color: transparent;
 }
+
 body {
   font-family: "Cera Pro";
+
+  position: relative;
 }
-.drawer-main-container {
-  max-width: 292px;
-  box-sizing: border-box;
-  font-family: "Cera Pro";
+
+
+// Отображение дровера поверх других страниц
+
+// правило для overlay-bg прописано в файле top.less 
+._withDrawer .overlay-bg{
+  opacity: .5;
+  pointer-events: auto;
 }
-.drawer-wrapper {
-  padding-left: @baseOffset*2;
-  padding-right: @baseOffset*2;
+
+.drawer {
+  width: 296px;
+  background-color: white;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  transform: translateX(-100%);
+  transition: transform .5s;
+  height: 100%;
+  overflow-y: scroll;
 }
+
+._withDrawer .drawer {
+  transform: translateX(0);
+}
+
 /* CHANGE SITE BUTTONS  */
 .drawer-change-site-container {
   background-color: #0056c8;
@@ -58,7 +79,7 @@ body {
   font-weight:500;
 }
 .drawer-settings-button {
-  background-image: url(src/drawer-settings.svg);
+  background-image: url(/menuDrawer/src/drawer-settings.svg);
 
   width: 24px;
   height: 24px;
@@ -136,7 +157,7 @@ body {
     width: 16px;
     height: 16px;
 
-    background-image: url(src/search.svg);
+    background-image: url(/menuDrawer/src/search.svg);
   }
 }
 
@@ -218,12 +239,12 @@ body {
     margin-left: @baseOffset;
   }
   &-icon-notification {
-    background-image: url(src/notifications.svg);
+    background-image: url(menuDrawer/src/notifications.svg);
     width: 24px;
     height: 24px;
   }
   &-icon-account {
-    background-image: url(src/account.svg);
+    background-image: url(menuDrawer/src/account.svg);
     width: 24px;
     height: 24px;
   }
@@ -280,7 +301,7 @@ body {
     align-items: center;
   }
   &-deposit__icon {
-    background-image: url(src/add.svg);
+    background-image: url(menuDrawer/src/add.svg);
     width: 12px;
     height: 12px;
     margin-left: 6px;

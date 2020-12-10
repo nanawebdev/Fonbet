@@ -1,13 +1,3 @@
-// ФУНКЦИЯ ДЛЯ СОЗДАНИЯ ЭЛЕМЕНТА
-let makeElement = function (tagName, className, text) {
-    let element = document.createElement(tagName)
-    element.classList.add(className)
-    if (text) {
-        element.textContent = text
-    }
-    return element
-}
-
 // Переключатель Лайв\линия и поиск
 let drawerButtonChangeLiveLine = document.querySelectorAll('.drawer-button-change')
 // let drawerLineButton = document.querySelector('.drawer-line-button')
@@ -29,10 +19,10 @@ addRedBorder(drawerButtonChangeLiveLine)
 let drawerSportContainer = document.querySelector('.drawer-sport-container')
 
 let sportEventsDrawer = [
-    { name: 'Футбол', iconUrl: 'src/football_1.svg' },
-    { name: 'Баскетбол', iconUrl: 'src/basketball_3x.svg' },
-    { name: 'Волейбол', iconUrl: 'src/volleyball_9.svg' },
-    { name: 'Теннис', iconUrl: 'src/tennis_4.svg' },
+    { name: 'Футбол', iconUrl: 'menuDrawer/src/football_1.svg' },
+    { name: 'Баскетбол', iconUrl: 'menuDrawer/src/basketball_3x.svg' },
+    { name: 'Волейбол', iconUrl: 'menuDrawer/src/volleyball_9.svg' },
+    { name: 'Теннис', iconUrl: 'menuDrawer/src/tennis_4.svg' },
 ]
 
 let renderSportEventsLinksDrawer = function (array) {
@@ -73,7 +63,7 @@ let renderLinksDrawer = function (array, parent) {
         let drawerLinksWrapper = makeElement('div', 'drawer-link-wrapper')
         let drawerLink = makeElement('div', 'drawer-link', array[i].name)
         let drawerLinkChevron = makeElement('img', 'drawer-link-icon')
-        drawerLinkChevron.src = 'src/chevron-right.svg'
+        drawerLinkChevron.src = 'menuDrawer/src/chevron-right.svg'
         drawerLinksWrapper.appendChild(drawerLink)
 
 
@@ -98,3 +88,5 @@ let renderLinksDrawer = function (array, parent) {
 }
 renderLinksDrawer(drawerBottomLinks, drawerBottomLinksWrapper)
 renderLinksDrawer(drawerUpperLinks, drawerUpperLinksWrapper)
+
+
